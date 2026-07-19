@@ -1,6 +1,6 @@
 console.log("func test");
 
-let answered = 8;
+let answered = 0;
 let anim = document.body;
 let pop = document.getElementById('popup');
 let title = document.getElementById('invincible');
