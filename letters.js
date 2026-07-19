@@ -11,7 +11,7 @@ let words = [
     "POWER",
     "TERRITORY",
     "RECOGNITION",
-    ""
+    "SOURCE"
 ];
 let i = 0;
 
@@ -30,15 +30,24 @@ function question() {
 
     
     function disp() {
-        for (let x = 0 ; x < kawaii ; x++) {
-            
-            blanks.innerHTML += `
-            <div class="blank">
-            <h2 id="text${x}"></h2>
-            </div>
-            `;
+        if (i <= 8) {
+            for (let x = 0 ; x < kawaii ; x++) {
+                blanks.innerHTML += `
+                <div class="blank">
+                <h2 id="text${x}"></h2>
+                </div>`;
+            }
         }
-    } disp()
+
+        else {
+            for (let x = 0 ; x < kawaii ; x++) {
+                blanks.innerHTML += `
+                <div class="blank">
+                <h2 id="text${x}">${curren[x]}</h2>
+                </div>`;
+        }
+    }
+} disp()
 
     
 

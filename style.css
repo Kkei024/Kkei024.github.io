@@ -155,8 +155,8 @@ body.wro {
 
 .pictures div {
     margin: auto;
-    width: 95%;
     height: 95%;
+    width: 95%;
     border: 3px solid white;
     overflow: hidden;
 }

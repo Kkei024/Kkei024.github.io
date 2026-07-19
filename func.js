@@ -1,6 +1,6 @@
 console.log("func test");
 
-let answered = 0;
+let answered = 8;
 let anim = document.body;
 let pop = document.getElementById('popup');
 let title = document.getElementById('invincible');
@@ -49,13 +49,36 @@ document.addEventListener("keydown", function(enter) {
 let y = 1;
 function images() {
     let x = 0;
-    for (x = 1; x <= 4; x++) {
-        console.log("showing " + x + "image");
-        console.log("showing " + y + "image");
-        
-        let imager = document.getElementById(`img${x}`);
-        imager.src = `pictures/${y}.jpg`;
-        y++
+    if (answered <= 8) {
+        for (x = 1; x <= 4; x++) {
+            console.log("showing " + x + "image");
+            console.log("showing " + y + "image");
+            
+            let imager = document.getElementById(`img${x}`);
+            imager.src = `pictures/${y}.jpg`;
+            y++
+        }
+    }
+
+    else {
+        document.getElementById('pic').innerHTML = `
+        <div class="pic1" id="final">
+        <img src="" id="img1">
+        </div>
+        `
+        document.getElementById('img1').src = "pictures/qr.jpg";
+
+        let fin = document.getElementById('final');
+        fin.style.borderRadius = "3vw";
+        fin.style.width = "35vh";
+        fin.style.height = "35vh";
+        fin.style.margin = "auto";
+
+        document.querySelector('.header').innerHTML = `
+        <h1>Group 1</h1>
+        `
+
+        document.getElementById('ans').remove();
     }
 } images()
 
@@ -107,8 +130,14 @@ let texts = document.querySelectorAll('h3');
 let z = 0;
 
 function infodump() {
-    texts.forEach(element => {
+    if (z == 26) {
+
+    }
+
+    else {
+        texts.forEach(element => {
         element.innerText = descriptions[z];
         z++;
     });
+    }
 }
